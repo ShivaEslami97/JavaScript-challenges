@@ -1,26 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
 html {
   font-size: 10px;
-  background: url("../images/background.jpg") bottom center;
+  background: url("../images/david-martin-6NpYOFB3VCI-unsplash.jpg") center
+    center;
   background-size: cover;
 }
-
-body,
-html {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
-
+html {
+  font-size: 62.5%;
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
+body {
+  font-size: 1.5rem;
+}
+main {
+  gap: 5rem;
+  min-height: 100vh;
+  background-color: rgb(25 22 22 / 61%);
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.main__heading {
+  font-family: "Kaushan Script", cursive;
+  color: snow;
+  letter-spacing: 3px;
+  font-size: 4rem;
+}
+.main__descrp {
+  color: #ffc600;
+  font-size: 1.7rem;
+  text-shadow: 0 0 0.5rem rgb(255 250 250 / 53%);
+}
 .keys {
   display: flex;
-  flex: 1;
-  min-height: 100vh;
   align-items: center;
   justify-content: center;
 }
 
 .key {
-  border: 0.4rem solid black;
+  border: 0.4rem solid snow;
   border-radius: 0.5rem;
   margin: 1rem;
   font-size: 1.5rem;
@@ -29,8 +58,8 @@ html {
   width: 10rem;
   text-align: center;
   color: white;
-  background: rgba(0, 0, 0, 0.4);
-  text-shadow: 0 0 0.5rem black;
+  background: rgb(23 22 22 / 42%);
+  text-shadow: 0 0 0.5rem rgb(255 250 250 / 53%);
 }
 
 .playing {

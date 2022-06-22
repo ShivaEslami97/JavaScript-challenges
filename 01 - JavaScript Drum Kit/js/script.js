@@ -27,9 +27,3 @@ key.forEach(element => {
 });
 
 window.addEventListener('keydown', playAudio);
-
-// audio.addEventListener("ended", function () {
-//     alert("ended");
-//     audio.currentTime = 0;
-//     audio.play();
-// });   
