@@ -2,7 +2,6 @@
 
 
 const key = document.querySelectorAll('.key[data-key]');
-const audio = document.querySelectorAll('.audio[data-key]');
 
 const playAudio = (e) => {
     /// KeyboardEvent.keyCode been deprecated for some time. Use KeyboardEvent.code.
