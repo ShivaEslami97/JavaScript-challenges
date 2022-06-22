@@ -21,7 +21,6 @@ key.forEach(element => {
     element.addEventListener('click', playAudio);
     /// after transition end => remove playing class
     element.addEventListener('transitionend', (e) => {
-        console.log(e);
         element.classList.remove("playing");
     });
 });
