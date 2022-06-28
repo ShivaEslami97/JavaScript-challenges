@@ -30,7 +30,7 @@ function getJoke() {
 function tweetQuote() {
     const tweet = joke.innerHTML;
     if (tweet.trim() !== '')
-        window.open(`https://twitter.com/home/?text=${tweet}`);
+        window.open(`https://twitter.com/share?text=${tweet}`);
 }
 getJoke();
 jokeBtn.addEventListener('click', getJoke);
