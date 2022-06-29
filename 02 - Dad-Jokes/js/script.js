@@ -20,22 +20,37 @@ function getJoke() {
     fetch('https://icanhazdadjoke.com/', options)
         .then(response => response.json())
         .then(data => {
-            setTimeout(function () {
-                joke.classList.add('in');
-                joke.textContent = data.joke;
-            }, 500);
-            loading.classList.add('hidden');
-            jokeBtns.classList.remove('hidden');
+            addContent(data.joke);
+        })
+        .catch(function (error) {
+            // if some error occured
+            addContent('Oops! Some error happened :(');
+            // console log the error
+            console.log(error);
         });
+}
+function addContent(text) {
+    setTimeout(function () {
+        joke.classList.add('in');
+        joke.textContent = text;
+    }, 500);
+    loading.classList.add('hidden');
+    jokeBtns.classList.remove('hidden');
 }
 function tweetQuote() {
     const tweet = joke.innerHTML;
-    if (tweet.trim() !== '')
-        window.open(`https://twitter.com/share?text=${tweet}`);
+    if (tweet.trim() !== '') {
+        const tweetLink = `https://twitter.com/share?text=${encodeURIComponent(tweet)}`;
+        // set the href
+        twitterBtn.setAttribute('href', tweetLink);
+    }
 }
 getJoke();
+//// Get joke by click
 jokeBtn.addEventListener('click', getJoke);
+//// post joke on twitter
 twitterBtn.addEventListener('click', tweetQuote);
+//// Smiley selector
 jokeSmiley.forEach(smiley => {
     smiley.addEventListener('click', () => {
         jokeSmiley.forEach(smileyItem => {
