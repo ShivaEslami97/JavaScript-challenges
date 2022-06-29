@@ -4,6 +4,7 @@ const jokeBtn = document.querySelector('.joke__btn-joke');
 const twitterBtn = document.querySelector('.joke__btn-twitter');
 const loading = document.querySelector('.lds-ellipsis');
 const jokeBtns = document.querySelector('.joke__bottom');
+const jokeSmiley = document.querySelectorAll('.joke__smiley');
 
 function getJoke() {
     const options = {
@@ -35,3 +36,11 @@ function tweetQuote() {
 getJoke();
 jokeBtn.addEventListener('click', getJoke);
 twitterBtn.addEventListener('click', tweetQuote);
+jokeSmiley.forEach(smiley => {
+    smiley.addEventListener('click', () => {
+        jokeSmiley.forEach(smileyItem => {
+            smileyItem.classList.remove('on');
+        });
+        smiley.classList.toggle('on');
+    });
+})

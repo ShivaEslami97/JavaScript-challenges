@@ -36,7 +36,7 @@ main {
   border-radius: 1rem;
   display: grid;
   justify-items: center;
-  gap: 2rem;
+  gap: 3rem;
   color: #0b090a;
   max-width: 100%;
   width: 800px;
@@ -46,6 +46,12 @@ main {
   font-size: 2.2rem;
   text-transform: capitalize;
   color: #7d8597;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.joke__title h3 {
+  margin-right: 1rem;
 }
 .joke__body {
   display: flex;
@@ -132,6 +138,26 @@ main {
 .hidden {
   display: none;
 }
+/* smiley */
+.joke__smiley {
+  cursor: pointer;
+}
+
+.joke__smiley #bakgrunn {
+  fill: #ffffff;
+  transition: all 0.3s;
+}
+.joke__smiley:hover #bakgrunn {
+  fill: #ebebf5;
+}
+.on {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+.on #bakgrunn {
+  fill: #fcc24d;
+}
+
 @keyframes lds-ellipsis1 {
   0% {
     transform: scale(0);
